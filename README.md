@@ -4,7 +4,7 @@ This project is a open-source management application for short-track speedskatin
 ## PoC ( Proof of Concept ):
 ### Stack:
 - NX
-- Postgres
+- Mongoose
 - NestJS
 - GraphQL
 - Angular
