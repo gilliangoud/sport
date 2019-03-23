@@ -42,6 +42,8 @@ export class UsersService {
   }
 
   sanitizeUser(user: User) {
-    return user.depopulate('password');
+    user.depopulate('password');
+    user.depopulate('salt');
+    return user;
   }
 }

@@ -3,5 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  NODE_ENV: 'dev', // can be production, test and dev
+  MONGO_URI_TEST: 'mongodb://localhost/nest',
+  MONGO_URI: 'mongodb://localhost/nest',
+  SECRET_KEY: 'Shorttrack',
 };

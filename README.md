@@ -23,6 +23,8 @@ This project is a open-source management application for short-track speedskatin
 - [ ] Users can enter their Athletes in a competition
 - [ ] Users can withdraw their athletes from a competition with a reason. -> can change the status of a entry
 - [ ] Admins of the competition can mark competitors present or widthdrawn
+- [ ] Add usage of salts when hashing
+- [ ] more auth providers - TDB
 
 ## general ToDo:
 - [ ] a working proof of concept.
