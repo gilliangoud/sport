@@ -30,7 +30,7 @@ This project is a open-source management application for short-track speedskatin
 - [ ] a contribution guide.
 - [ ] a seperate todo markdown.
 - [ ] further set-up.
-- [ ] make it into a aliexpress clone aswell so it can make money :)
+- [ ] make it into a aliexpress clone aswell so maybe it can make money :)
 
 ## Running unit tests
 
