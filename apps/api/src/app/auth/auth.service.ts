@@ -8,6 +8,7 @@ export class AuthService {
   constructor(private usersService: UsersService) {}
 
   async signPayload(payload: Payload) {
+    // TODO add expires-in variable
     return sign(payload, process.env.SECRET_KEY, { expiresIn: '12h' });
   }
 
