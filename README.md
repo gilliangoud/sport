@@ -1,5 +1,5 @@
 # GoudSport
-This project is a open-source management application for short-track speedskating competitions.
+This project is a open-source management application for short-track speed skating competitions.
 
 ## PoC ( Proof of Concept ):
 ### Stack:
@@ -13,16 +13,16 @@ This project is a open-source management application for short-track speedskatin
 - [x] Auth users
 - [x] Login
 - [x] Registering
-- [ ] Users can register themselves as a athlete
-- [ ] Users can register a club
-- [ ] Users can join a club
-- [ ] Users can represent a club
+- [x] Users can register themselves as a athlete
+- [ ] Users can register a club/organization
+- [ ] Users can join a club/organization
+- [ ] Users can represent a club/organization
 - [ ] Admins can approve applicants
-- [ ] Users can be admin of a club
-- [ ] Admins of a club can create a competition, all clubadmins get added to the competition
+- [ ] Users can be admin of a club/organization
+- [ ] Admins of a club can create a competition, all club admins get added to the competition
 - [ ] Users can enter their Athletes in a competition
 - [ ] Users can withdraw their athletes from a competition with a reason. -> can change the status of a entry
-- [ ] Admins of the competition can mark competitors present or widthdrawn
+- [ ] Admins of the competition can mark competitors present or withdrawn
 - [ ] Add usage of salts when hashing
 - [ ] more auth providers - TDB
 
@@ -30,9 +30,9 @@ This project is a open-source management application for short-track speedskatin
 - [ ] a working proof of concept.
 - [ ] an actual readme.
 - [ ] a contribution guide.
-- [ ] a seperate todo markdown.
+- [ ] a separate todo markdown.
 - [ ] further set-up.
-- [ ] make it into a aliexpress clone aswell so maybe it can make money :)
+- [ ] make it into a aliexpress clone as well so maybe it can make money :)
 
 ## Running unit tests
 

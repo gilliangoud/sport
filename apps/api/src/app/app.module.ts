@@ -5,6 +5,7 @@ import { AuthModule } from './auth/auth.module';
 import { CompetitionsModule } from './competitions/competitions.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { SharedModule } from './shared/shared.module';
+import { OrganizationsModule } from './organizations/organizations.module';
 
 @Module({
   imports: [
@@ -12,7 +13,8 @@ import { SharedModule } from './shared/shared.module';
     AuthModule,
     CompetitionsModule,
     MongooseModule.forRoot('mongodb://localhost/nest' || process.env.MONGO_URI),
-    SharedModule
+    SharedModule,
+    OrganizationsModule
   ],
   controllers: [AppController],
   providers: []
