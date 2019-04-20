@@ -6,7 +6,6 @@ This project is a open-source management application for short-track speed skati
 - NX
 - Mongoose
 - NestJS
-- GraphQL
 - Angular
 
 ### Todo:
