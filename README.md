@@ -13,7 +13,7 @@ This project is a open-source management application for short-track speedskatin
 - [x] Auth users
 - [x] Login
 - [x] Registering
-- [ ] Users can register themselfs as a athlete
+- [ ] Users can register themselves as a athlete
 - [ ] Users can register a club
 - [ ] Users can join a club
 - [ ] Users can represent a club

@@ -1,5 +1,5 @@
 import { Controller } from '@nestjs/common';
 
 @Controller('competitions')
-@UseGuards(AuthGuard())
+//@UseGuards(AuthGuard())
 export class CompetitionsController {}

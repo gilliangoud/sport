@@ -2,6 +2,15 @@ import * as bcrypt from 'bcrypt';
 import * as mongoose from 'mongoose';
 import * as uniqueValidator from 'mongoose-unique-validator';
 
+export const athleteSchema = new mongoose.Schema({
+  sports: [{
+    name: String,
+    association_name: String,
+    association_id: String,
+    club: String
+  }]
+}, {timestamps: true});
+
 export const UserSchema = new mongoose.Schema({
   email: {
     type: String,
@@ -37,7 +46,8 @@ export const UserSchema = new mongoose.Schema({
     first: String,
     middle: String,
     last: String
-  }
+  },
+  athlete: athleteSchema
 }, {timestamps: true});
 
 UserSchema.plugin(uniqueValidator, {message: 'is already taken.'});

@@ -1,6 +1,5 @@
 import { Module } from "@nestjs/common";
 import { AppController } from "./app.controller";
-import { AppService } from "./app.service";
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { CompetitionsModule } from './competitions/competitions.module';
@@ -16,6 +15,6 @@ import { SharedModule } from './shared/shared.module';
     SharedModule
   ],
   controllers: [AppController],
-  providers: [AppService]
+  providers: []
 })
 export class AppModule {}
