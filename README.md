@@ -15,7 +15,7 @@ This project is a open-source management application for short-track speed skati
 - [x] Users can register themselves as a athlete
 - [x] Users can register a club/organization
 - [x] Users can join a club/organization
-- [ ] Users can represent a club/organization
+- [x] Users can represent a club/organization in a sport
 - [ ] Admins can approve applicants
 - [ ] Users can be admin of a club/organization
 - [ ] Admins of a club can create a competition, all club admins get added to the competition

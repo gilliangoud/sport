@@ -3,11 +3,17 @@ import * as mongoose from 'mongoose';
 import * as uniqueValidator from 'mongoose-unique-validator';
 
 export const athleteSchema = new mongoose.Schema({
-  sports: [{
-    name: String,
-    association_name: String,
-    association_id: String,
-    club: String
+  represents: [{
+    sport: {
+      type: String,
+      enum: ['Shorttrack', 'Other'],
+      required: true
+    },
+    organization: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Organizations',
+      required: true
+    },
   }]
 }, {timestamps: true});
 
@@ -50,7 +56,7 @@ export const UserSchema = new mongoose.Schema({
   athlete: athleteSchema
 }, {timestamps: true});
 
-UserSchema.plugin(uniqueValidator, {message: 'is already taken.'});
+UserSchema.plugin(uniqueValidator, {message: 'Is already taken.'});
 
 
 //TODO use salts

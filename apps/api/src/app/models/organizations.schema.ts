@@ -4,7 +4,7 @@ import * as uniqueValidator from 'mongoose-unique-validator';
 export const schema = new mongoose.Schema({
   owner: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
+    ref: 'Users',
     required: true
   },
   name: {
@@ -23,8 +23,8 @@ export const schema = new mongoose.Schema({
   description: String,
   members: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
+    ref: 'Users',
   }],
 }, {timestamps: true});
 
-schema.plugin(uniqueValidator, {message: 'is already taken.'});
+schema.plugin(uniqueValidator, {message: 'Is already taken.'});
