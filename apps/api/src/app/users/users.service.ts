@@ -39,15 +39,8 @@ export class UsersService {
   async update(
     id: string,
     userDTO: Partial<User>,
-    userId: string,
   ): Promise<User> {
     const user = await this.userModel.findById(id);
-    if (userId !== userDTO._id.toString()) {
-      throw new HttpException(
-        'You do not own this property',
-        HttpStatus.UNAUTHORIZED,
-      );
-    }
     await user.update(userDTO);
     return await this.userModel.findById(id);
   }
