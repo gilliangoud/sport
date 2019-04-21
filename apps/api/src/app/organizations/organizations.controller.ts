@@ -31,7 +31,11 @@ export class OrganizationsController {
     @User() user: UserDocument,
   ): Promise<Organization> {
     const { id: userId } = user;
-    return await this.organizationsService.update(id, org, userId);
+    if (user.admin){
+      return await this.organizationsService.update(id, org);
+    } else {
+      return await this.organizationsService.update(id, org, userId);
+    }
   }
 
   // TODO return a joinDTO with confirmation instead of the whole org object

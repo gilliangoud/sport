@@ -20,10 +20,22 @@ export const schema = new mongoose.Schema({
     index: true
   },
   image: String,
+  status: {
+    type: String,
+    enum: ['pending', 'active', 'removed'],
+    default: 'pending',
+    required: true
+  },
   description: String,
   members: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Users',
+    member: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Users'
+    },
+    roles: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'roles'
+    }]
   }],
 }, {timestamps: true});
 

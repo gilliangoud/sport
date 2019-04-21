@@ -8,4 +8,5 @@ export interface Organization extends Document {
   image?: String;
   description?: String;
   members?: [String] | [User];
+  status: string;
 }

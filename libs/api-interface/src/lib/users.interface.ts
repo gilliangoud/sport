@@ -10,12 +10,28 @@ export interface Address {
   zip: number;
 }
 
+export interface Athlete {
+  represents: [{
+    sport: string,
+    organization: string
+  }];
+
+}
+
 export interface User extends Document {
   email: string;
   readonly password: string;
-  seller: boolean;
+  readonly salt: string;
+  readonly gender: string;
+  bio: string;
   address: Address;
-  created: Date;
+  athlete: Athlete;
+  readonly admin: boolean;
+  name: {
+    first: string,
+    middle: string,
+    last: string
+  }
 }
 
 export interface LoginDTO {

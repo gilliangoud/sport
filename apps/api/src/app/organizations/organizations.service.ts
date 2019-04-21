@@ -24,10 +24,10 @@ export class OrganizationsService {
   async update(
     id: string,
     orgDTO: Partial<CreateOrgDTO>,
-    userId: string,
+    userId?: string,
   ): Promise<Organization> {
     const org = await this.organizationModel.findById(id);
-    if (userId !== org.owner.toString()) {
+    if (userId !== org.owner.toString() && userId) {
       throw new HttpException(
         'You do not own this property',
         HttpStatus.UNAUTHORIZED,

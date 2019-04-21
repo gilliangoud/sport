@@ -53,7 +53,15 @@ export const UserSchema = new mongoose.Schema({
     middle: String,
     last: String
   },
-  athlete: athleteSchema
+  athlete: athleteSchema,
+  admin: {
+    type: Boolean,
+    default: false
+  },
+  roles: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'roles'
+  }]
 }, {timestamps: true});
 
 UserSchema.plugin(uniqueValidator, {message: 'Is already taken.'});
