@@ -24,7 +24,7 @@ export class UsersService {
     const { username, password } = userDTO;
     const user = await this.userModel
       .findOne({ username })
-      .select('username password seller created address');
+      .select('username password address');
     if (!user) {
       throw new HttpException('Invalid credentials', HttpStatus.UNAUTHORIZED);
     }
@@ -34,6 +34,22 @@ export class UsersService {
     } else {
       throw new HttpException('Invalid credentials', HttpStatus.UNAUTHORIZED);
     }
+  }
+
+  async update(
+    id: string,
+    userDTO: Partial<User>,
+    userId: string,
+  ): Promise<User> {
+    const user = await this.userModel.findById(id);
+    if (userId !== userDTO._id.toString()) {
+      throw new HttpException(
+        'You do not own this property',
+        HttpStatus.UNAUTHORIZED,
+      );
+    }
+    await user.update(userDTO);
+    return await this.userModel.findById(id);
   }
 
   async findByPayload(payload: Payload) {

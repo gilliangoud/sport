@@ -5,11 +5,13 @@ export const schema = new mongoose.Schema({
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
+    required: true
   },
   name: {
     // TODO see if capitalization fucks the unique check, if so; regex :(
     type: String,
-    unique: true
+    unique: true,
+    required: true
   },
   abbreviation: {
     type: String,
@@ -18,7 +20,11 @@ export const schema = new mongoose.Schema({
     index: true
   },
   image: String,
-  description: String
+  description: String,
+  members: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+  }],
 }, {timestamps: true});
 
 schema.plugin(uniqueValidator, {message: 'is already taken.'});

@@ -24,7 +24,7 @@ export class OrganizationsController {
   }
 
   @Put(':id')
-  @UseGuards(AuthGuard('jwt'))
+  @UseGuards(AuthGuard())
   async update(
     @Param('id') id: string,
     @Body() org: Partial<CreateOrgDTO>,
@@ -33,4 +33,18 @@ export class OrganizationsController {
     const { id: userId } = user;
     return await this.organizationsService.update(id, org, userId);
   }
+
+  // TODO return a joinDTO with confirmation instead of the whole org object
+  @Put(':id')
+  @UseGuards(AuthGuard())
+  async joinOrg(
+    @Param('id') id: string,
+    @Body() userDocument: Partial<UserDocument>,
+    @User() user: UserDocument,
+  ): Promise<Organization> {
+    const { id: userId } = user;
+    return await this.organizationsService.addMember(id, userDocument, userId);
+  }
+
+
 }

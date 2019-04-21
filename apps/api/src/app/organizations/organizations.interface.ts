@@ -5,6 +5,7 @@ export interface Organization extends Document {
   name: string;
   owner: User;
   abbreviation?: string;
-  image?: String,
-  description?: String
+  image?: String;
+  description?: String;
+  members?: [String] | [User];
 }

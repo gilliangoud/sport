@@ -36,4 +36,22 @@ export class OrganizationsService {
     await org.update(orgDTO);
     return await this.organizationModel.findById(id).populate('owner');
   }
+
+  async addMember(id: string, userDocument: Partial<User>, userId: any): Promise<Organization> {
+    const org = await this.organizationModel.findById(id);
+    if (userId !== userDocument._id.toString()) {
+      throw new HttpException(
+        'You do not own this property',
+        HttpStatus.UNAUTHORIZED,
+      );
+    } else if (org.members.includes(userDocument._id)) {
+      throw new HttpException(
+        "You're already in!",
+        HttpStatus.ACCEPTED,
+      )
+    }
+
+    await org.update({ members: [...org.members, userDocument._id] });
+    return await this.organizationModel.findById(id).populate('owner');
+  }
 }
