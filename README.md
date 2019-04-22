@@ -16,11 +16,11 @@ This project is a open-source management application for short-track speed skati
 - [x] Users can register a club/organization
 - [x] Users can join a club/organization
 - [x] Users can represent a club/organization in a sport
-- [x] Admins can approve organization applicants
-- [ ] Admins of a club can create a competition, editable by other club admins.
+- [x] Owners can approve organization applicants
+- [x] Owners of a club can create a competition.
 - [ ] Users can enter in a competition
 - [ ] Users can withdraw their athletes from a competition with a reason. -> can change the status of a entry
-- [ ] Admins of the competition can mark competitors present or withdrawn
+- [ ] Owners of the competition can mark competitors present or withdrawn
 - [ ] Add usage of salts when hashing
 - [ ] more auth providers - TDB
 

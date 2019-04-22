@@ -2,7 +2,7 @@ import { Controller, Post, UseGuards, Body } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { ACGuard, UseRoles } from 'nest-access-control';
 import { User } from '../utilities/user.decorator';
-import { User as UserDocument } from '@goud-sport/api-interface';
+import { User as UserDocument, CreateCompetitionDTO } from '@goud-sport/api-interface';
 import { CompetitionsService } from './competitions.service';
 import { Competition } from './competitions.interface';
 

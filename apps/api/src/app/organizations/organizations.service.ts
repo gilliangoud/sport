@@ -6,10 +6,18 @@ import { CreateOrgDTO, User } from '@goud-sport/api-interface';
 
 @Injectable()
 export class OrganizationsService {
-  constructor(@InjectModel('Organizations') private organizationModel: Model<Organization>) {}
+  constructor(@InjectModel('organizations') private organizationModel: Model<Organization>) {}
 
   async findAll(): Promise<Organization[]> {
     return await this.organizationModel.find().populate('owner');
+  }
+
+  async findById(id: string): Promise<Organization> {
+    const org = await this.organizationModel.findById(id);
+    if (!org) {
+      throw new HttpException('Product not found', HttpStatus.NO_CONTENT);
+    }
+    return org;
   }
 
   async create(orgDTO: CreateOrgDTO, user: User): Promise<Organization> {

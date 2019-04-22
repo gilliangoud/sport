@@ -6,7 +6,7 @@ import { schema } from '../models/organizations.schema';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([{ name: 'Organizations', schema: schema }]),
+    MongooseModule.forFeature([{ name: 'organizations', schema: schema }]),
   ],
   controllers: [OrganizationsController],
   providers: [OrganizationsService]
