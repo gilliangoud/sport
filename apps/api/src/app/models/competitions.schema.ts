@@ -1,4 +1,5 @@
 import * as mongoose from 'mongoose';
+import { pointSchema } from './point.schema';
 
 export const RaceSchema = new mongoose.Schema({
   competitors: [{
@@ -12,7 +13,7 @@ export const RaceSchema = new mongoose.Schema({
 export const CompetitionSchema = new mongoose.Schema({
   owner: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'organisations',
+    ref: 'organizations',
   },
   competitors: {
     type: [mongoose.Schema.Types.ObjectId],
@@ -21,6 +22,9 @@ export const CompetitionSchema = new mongoose.Schema({
   title: String,
   image: String,
   description: String,
-  races: [RaceSchema]
+  location: {
+    type: pointSchema,
+    required: true
+  }
 }, {timestamps: true});
 

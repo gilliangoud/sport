@@ -24,6 +24,7 @@ export const UserSchema = new mongoose.Schema({
     required: [true, "can't be blank"],
     match: [/\S+@\S+\.\S+/, 'is invalid'],
     index: true,
+    trim: true,
     unique: true
   },
   password: {

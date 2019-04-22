@@ -87,9 +87,15 @@ export class OrganizationsController {
   }
 
   // TODO return a joinDTO with confirmation instead of the whole org object
-  @Put(':id')
-  @UseGuards(AuthGuard())
-  async joinOrg(
+  // TODO change rbac resource to something like join, since the crud actions are in use and should not overlap
+  @Put(':id/join')
+  @UseGuards(AuthGuard, ACGuard)
+  @UseRoles({
+    resource: 'organization',
+    action: 'update',
+    possession: 'own'
+  })
+  async joinOrganization(
     @Param('id') id: string,
     @Body() userDocument: Partial<UserDocument>,
     @User() user: UserDocument

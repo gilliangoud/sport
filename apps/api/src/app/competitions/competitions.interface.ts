@@ -1,1 +1,1 @@
-export interface Competitions {}
+export interface Competition {}
