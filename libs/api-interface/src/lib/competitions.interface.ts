@@ -6,6 +6,24 @@ export interface CreateCompetitionDTO {
   location?: IGeometry;
 }
 
+export interface UpdateCompetitionDTO {
+  title: string;
+  image?: string;
+  description?: string;
+  location?: IGeometry;
+}
+
+export enum competitorStatus {
+  Entered,
+  Withdrawn,
+  Present
+}
+
+export interface UpdateCompetitorDTO {
+  competitor: string;
+  status: competitorStatus
+}
+
 export interface IGeometry {
   type: string;
   coordinates: number[];

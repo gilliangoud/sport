@@ -10,14 +10,21 @@ export const RaceSchema = new mongoose.Schema({
   }]
 })
 
+export const competitorSchema = new mongoose.Schema({
+  competitor: { type: [mongoose.Schema.Types.ObjectId], ref: 'users'},
+  status: {
+    type: String,
+    enum: ['Entered', 'Withdrawn', 'Present'],
+  }
+})
+
 export const CompetitionSchema = new mongoose.Schema({
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'organizations',
   },
   competitors: {
-    type: [mongoose.Schema.Types.ObjectId],
-    ref: 'users',
+    type: [competitorSchema],
   },
   title: String,
   image: String,
