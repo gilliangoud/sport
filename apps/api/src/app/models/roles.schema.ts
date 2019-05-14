@@ -17,12 +17,16 @@ export const schema = new mongoose.Schema({
     required: true,
     lowercase: true
   },
-  possession: {
-    type: String,
-    enum: ['any', 'own'],
-    required: true,
-    lowercase: true
+  domain: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'organizations'
   },
+  // possession: {
+  //   type: String,
+  //   enum: ['any', 'own'],
+  //   required: true,
+  //   lowercase: true
+  // },
   attributes: [{
     type: String,
     lowercase: true
